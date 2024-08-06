@@ -54,20 +54,47 @@
 % 设置文档的基础字体
 \usepackage[sfdefault]{roboto}
 
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{white},   % 代码块的背景颜色
+    commentstyle=\color{codegreen}, % 注释颜色
+    keywordstyle=\color{magenta},   % 关键字颜色
+    numberstyle=\tiny\color{codegray}, % 行号颜色
+    stringstyle=\color{codepurple}, % 字符串颜色
+    basicstyle=\fontsize{8}{8}\ttfamily, % 基本样式
+    breaklines=true,                 % 自动换行
+    captionpos=b,                    % 标题位置
+    keepspaces=false,                % 保持空格
+    numbers=left,                    % 行号位置
+    numbersep=5pt,                   % 行号与代码之间的间隔
+    showspaces=false,                % 显示空格
+    showstringspaces=false,           % 显示字符串中的空格
+    showtabs=false,                  % 显示制表符
+    tabsize=2,                       % 制表符宽度
+    xleftmargin=\parindent,          % 左边距
+    frame=single,                    % 添加边框
+}
+
+\lstset{style=mystyle}
+
 % 定义代码样式
 \lstdefinestyle{shared}{
     belowcaptionskip=1\baselineskip, % 代码块标题与代码之间的间距
     breaklines=true, % 自动换行
     xleftmargin=0ex, % 左边距
     showstringspaces=false, % 不显示字符串中的空格
-    basicstyle=\fontsize{6}{6}, % 基本样式
+    basicstyle=\fontsize{6}{6}\ttfamily, % 基本样式
     aboveskip=0ex,
     belowskip=0ex
 }
 
 % 为不同编程语言定义代码样式
 \lstdefinestyle{cpp}{
-    style=shared,
+    style=mystyle,
     language=C++,
     keywordstyle=\bfseries\color{green!40!black},
     commentstyle=\itshape\color{red!80!black},
